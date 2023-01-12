@@ -48,4 +48,4 @@ python yolov8_basics.py
 python yolov8_n_opencv.py
 ```
 
-![YoloV8 Basic Output](inference/out.JPG)
+
