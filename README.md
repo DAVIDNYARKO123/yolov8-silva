@@ -27,10 +27,6 @@ pip install -r requirements.txt
 
 > **Note**
 >
-> For Windows on Git Bash use `source venv/Scripts/activiate`. 
-
-> **Note**
->
 > Link to official  [`YoloV8 GitHub page`](https://github.com/ultralytics/ultralytics). Downgrade to opencv-python-4.5.5.64 `pip install opencv-python==4.5.5.64`.
 
 
