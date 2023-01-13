@@ -1,6 +1,6 @@
 copyright @ DEPA MSU 2023 | Public
 
-# YoloV8-Silva
+# YoloV8-Silva || [YouTube](https://www.youtube.com/watch?v=hg4oVgNq7Do)
 
 The most recent and cutting-edge `YOLO` model, `YoloV8`, can be utilized for applications including object identification, image categorization, and instance segmentation. `Ultralytics`, who also produced the influential `YOLOv5` model that defined the industry, developed `YOLOv8`. Compared to `YOLOv5`, `YOLOv8` has a number of architectural updates and enhancements.
 
