@@ -27,7 +27,7 @@ pip install -r requirements.txt
 
 > **Note**
 >
-> Link to official  [`YoloV8 GitHub page`](https://github.com/ultralytics/ultralytics). Downgrade to opencv-python-4.5.5.64 `pip install opencv-python==4.5.5.64`.
+> Link to official  [`YoloV8 GitHub page`](https://github.com/ultralytics/ultralytics). 
 
 
 ## Using `yolov8_basics.py`
