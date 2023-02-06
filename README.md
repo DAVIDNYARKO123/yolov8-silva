@@ -109,21 +109,41 @@ while True:
     detect_params = model.predict(source="inference/images/frame.png", conf=0.45,save=False)
 
     # Convert tensor array to numpy
-    print(detect_params[0].numpy())
-    detect_params = detect_params[0].numpy()
+    DP = detect_params[0].numpy()
+    print(DP)
 
-    if len(detect_params) !=0:
+    if len(DP) != 0:
+        for i in range(len(detect_params[0])):
+            print(i)
 
-        # Loop through all detections in current frame
-        for param in detect_params:
-            # print(param[1])
+            boxes = detect_params[0].boxes
+            box = boxes[i]  # returns one box
+            clsID = box.cls.numpy()[0]
+            conf = box.conf.numpy()[0]
+            bb = box.xyxy.numpy()[0]
 
-            # Draw BBox around detection
-            cv2.rectangle(frame, (int(param[0]),int(param[1])), (int(param[2]), int(param[3])), detection_colors[int(param[5])], 3)
+            cv2.rectangle(
+                frame,
+                (int(bb[0]), int(bb[1])),
+                (int(bb[2]), int(bb[3])),
+                detection_colors[int(clsID)],
+                3,
+            )
 
             # Display class name and confidence
             font = cv2.FONT_HERSHEY_COMPLEX
-            cv2.putText(frame,class_list[int(param[5])]+" "+str(round(param[4],3))+"%",(int(param[0]),int(param[1])-10),font,1,(255,255,255),2)
+            cv2.putText(
+                frame,
+                class_list[int(clsID)]
+                + " "
+                + str(round(conf, 3))
+                + "%",
+                (int(bb[0]), int(bb[1]) - 10),
+                font,
+                1,
+                (255, 255, 255),
+                2,
+            )
 
     # Display the resulting frame
     cv2.imshow('ObjectDetection', frame)
