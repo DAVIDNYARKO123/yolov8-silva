@@ -102,11 +102,8 @@ while True:
     #  resize the frame | small frame optimise the run 
     # frame = cv2.resize(frame, (frame_wid, frame_hyt))
 
-    # write frame to be loaded by the prediction module
-    cv2.imwrite("inference/images/frame.png",frame)
-
-    # Predict on image 
-    detect_params = model.predict(source="inference/images/frame.png", conf=0.45,save=False)
+    # Predict on image
+    detect_params = model.predict(source=[frame], conf=0.45, save=False)
 
     # Convert tensor array to numpy
     DP = detect_params[0].numpy()
