@@ -2,3 +2,5 @@
 
 .DS_Store
 .ds_store
+*.pt
+runs
